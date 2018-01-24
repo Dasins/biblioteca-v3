@@ -3,8 +3,8 @@
  * Almacena los detalles de un libro
  * como el titulo, isbn, autor y numero de paginas.
  * 
- * Inicio: 16:15
- * Ultimo Commit: 16:20
+ * Inicio: 16:25
+ * Ultimo Commit: 16:32
  *
  * @author Dasins
  * @version 24/01/2018
@@ -30,6 +30,66 @@ public class Libro {
        this.isbn = isbn;
        this.titulo = titulo;
        this.autor = autor;
+       this.numPags = numPags;
+   }
+   
+   /**
+    * @return Devuelve el isbn del libro.
+    */
+   public int getIsbn() {
+       return isbn;
+   }
+   
+   /**
+    * @return Devuelve el titulo del libro.
+    */
+   public String getTitulo() {
+       return titulo;
+   }
+   
+   /**
+    * @return Devuelve el autor/autores del libro.
+    */
+   public String getAutor() {
+       return autor;
+   }
+   
+   /**
+   * @return Devuelve el numero de paginas del libro.
+   */
+    public int getNumPags() {
+       return numPags;
+   }
+   
+   /**
+    * Modifica el isbn del libro.
+    * @param isbn El nuevo isbn.
+   */
+   public void setIsbn(int isbn) {
+       this.isbn = isbn;
+   }
+   
+   /**
+    * Modifica el titulo del libro.
+    * @param titulo El nuevo titulo.
+   */
+   public void setTitulo(String titulo) {
+       this.titulo = titulo;
+   }
+   
+   /**
+    * Modifica el autor/autores del libro.
+    * @param autor El nuevo autor o autores.
+   */
+   public void setAutor(String autor) {
+       this.autor = autor;
+   }
+   
+   /**
+    * Modifica el numero de paginas del libro.
+    * @param numPags El nuevo numero de paginas.
+   */
+   public void setNumPags(int numPags) {
        this.numPags = numPags;
    }
 }
