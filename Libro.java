@@ -3,8 +3,8 @@
  * Almacena los detalles de un libro
  * como el titulo, isbn, autor y numero de paginas.
  * 
- * Inicio: 16:25
- * Ultimo Commit: 16:32
+ * Inicio: 16:33
+ * Ultimo Commit: 16:35
  *
  * @author Dasins
  * @version 24/01/2018
@@ -55,10 +55,18 @@ public class Libro {
    }
    
    /**
-   * @return Devuelve el numero de paginas del libro.
-   */
-    public int getNumPags() {
+    * @return Devuelve el numero de paginas del libro.
+    */
+   public int getNumPags() {
        return numPags;
+   }
+   
+   /**
+    * @return Devuelve toda la informacion del libro como cadena.
+    */
+   public String getInfo() {
+       String info = "ISBN: " + isbn + " Titulo: " + titulo + " Autor/es: " +  autor + " Pags: " + numPags;;
+       return info;
    }
    
    /**
