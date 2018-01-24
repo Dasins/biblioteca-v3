@@ -3,13 +3,15 @@
  * Almacena los detalles de un libro
  * como el titulo, isbn, autor y numero de paginas.
  * 
- * Inicio: 16:33
- * Ultimo Commit: 16:35
+ * Inicio: 16:37
+ * Ultimo Commit: 16:39
  *
  * @author Dasins
  * @version 24/01/2018
  */
 public class Libro {
+   // ID del libro. Clave primaria, autonumerica (no se puede modificar).
+   private int id; 
    // El isbn 
    private int isbn;
    // Titulo del libro.
@@ -26,7 +28,8 @@ public class Libro {
     * @param autor El autor del libro.
     * @param numPags El numero de paginas del libro.
     */
-   public Libro(int isbn, String titulo, String autor, int numPags) {
+   public Libro(int id, int isbn, String titulo, String autor, int numPags) {
+       this.id = id;
        this.isbn = isbn;
        this.titulo = titulo;
        this.autor = autor;
@@ -65,7 +68,7 @@ public class Libro {
     * @return Devuelve toda la informacion del libro como cadena.
     */
    public String getInfo() {
-       String info = "ISBN: " + isbn + " Titulo: " + titulo + " Autor/es: " +  autor + " Pags: " + numPags;;
+       String info = id + ". ISBN: " + isbn + " Titulo: " + titulo + " Autor/es: " +  autor + " Pags: " + numPags;;
        return info;
    }
    
