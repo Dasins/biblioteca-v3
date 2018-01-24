@@ -13,11 +13,13 @@ public class Libro {
    // ID del libro. Clave primaria, autonumerica (no se puede modificar).
    private int id; 
    // El isbn 
-   private int isbn;
+   private String isbn;
    // Titulo del libro.
    private String titulo;
    // Autor o autores del libro.
    private String autor;
+   // Ano publicacion.
+   private int ano;
    // Numero de paginas del libro.
    private int numPags;
    
@@ -28,18 +30,19 @@ public class Libro {
     * @param autor El autor del libro.
     * @param numPags El numero de paginas del libro.
     */
-   public Libro(int id, int isbn, String titulo, String autor, int numPags) {
+   public Libro(int id, String isbn, String titulo, String autor, int ano, int numPags) {
        this.id = id;
        this.isbn = isbn;
        this.titulo = titulo;
        this.autor = autor;
+       this.ano = ano;
        this.numPags = numPags;
    }
    
    /**
     * @return Devuelve el isbn del libro.
     */
-   public int getIsbn() {
+   public String getIsbn() {
        return isbn;
    }
    
@@ -58,6 +61,13 @@ public class Libro {
    }
    
    /**
+    * @return Devuelve el anode publicacion del libro.
+    */
+   public int getAno() {
+       return ano;
+   }
+   
+   /**
     * @return Devuelve el numero de paginas del libro.
     */
    public int getNumPags() {
@@ -68,7 +78,7 @@ public class Libro {
     * @return Devuelve toda la informacion del libro como cadena.
     */
    public String getInfo() {
-       String info = id + ". ISBN: " + isbn + " Titulo: " + titulo + " Autor/es: " +  autor + " Pags: " + numPags;;
+       String info = id + ".\t" + isbn + "\t" +  autor + "\t\t" + numPags + "\t" + titulo;
        return info;
    }
    
@@ -76,7 +86,7 @@ public class Libro {
     * Modifica el isbn del libro.
     * @param isbn El nuevo isbn.
    */
-   public void setIsbn(int isbn) {
+   public void setIsbn(String isbn) {
        this.isbn = isbn;
    }
    
@@ -94,6 +104,14 @@ public class Libro {
    */
    public void setAutor(String autor) {
        this.autor = autor;
+   }
+   
+   /**
+    * Modifica el ano de publicacion del libro.
+    * @param numPags El nuevo ano de publicacion.
+   */
+   public void setAno(int ano) {
+       this.ano = ano;
    }
    
    /**
