@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Almacena la informacion de una coleccion de libros
  *
- * Inicio: 17:03
- * Ultimo commit: 17:11
+ * Inicio: 17:43
+ * Ultimo commit: 18:36
  *
  * @author Dasins
  * @version 24/01/2018
@@ -50,21 +51,63 @@ public class Libreria {
     }
     
     /**
+     * Muestra por la terminal todos los libros ordenados ascendentemente por autor.
+     */
+    public void ordenarPorTitulo() {
+        if(libros.size() > 0) {
+            ArrayList<Libro> copiaColeccion = libros;
+            System.out.println("ID\tISBN\t\tAutor/es\t\tPags\tTitulo");
+            for(int j = 0; j < copiaColeccion.size(); j = 0) {
+                Libro primerElemento = copiaColeccion.get(j);
+                for(int i = 0; i < copiaColeccion.size(); i++) {
+                    Libro elementoActual = copiaColeccion.get(i);
+                    if(elementoActual.getTitulo().compareToIgnoreCase(primerElemento.getTitulo()) < 0) {
+                        primerElemento = elementoActual;
+                    } 
+                }
+                copiaColeccion.remove(primerElemento);
+                System.out.println(primerElemento.getInfo());
+            } 
+        }
+    }
+    
+    /**
+     * Muestra por la terminal todos los libros ordenados descendentemente por autor.
+     */
+    public void ordenarPorTituloDesc() {
+        if(libros.size() > 0) {
+            ArrayList<Libro> copiaColeccion = libros;
+            System.out.println("ID\tISBN\t\tAutor/es\t\tPags\tTitulo");
+            for(int j = 0; j < copiaColeccion.size(); j = 0) {
+                Libro primerElemento = copiaColeccion.get(j);
+                for(int i = 0; i < copiaColeccion.size(); i++) {
+                    Libro elementoActual = copiaColeccion.get(i);
+                    if(elementoActual.getTitulo().compareToIgnoreCase(primerElemento.getTitulo()) > 0) {
+                        primerElemento = elementoActual;
+                    } 
+                }
+                copiaColeccion.remove(primerElemento);
+                System.out.println(primerElemento.getInfo());
+            } 
+        }
+    }
+    
+    /**
      * Metodo temporal para testing. Anade libros a la coleccion.
      */
     public void test() {
         addLibro("9788431615345","El Conde Lucanor","Don Juan Manuel", 2014, 208);
         addLibro("9788431635176","Zalacain el Aventurero","Pio Baroja", 2014, 272);
-        addLibro("9788441421745","La Dama del Alba","Alex Casona", 2006, 144);
+        addLibro("9788441421745","La Dama del Alva","Alex Casona", 2006, 144);
         addLibro("9788441421745","La Dama del Alba","Alex Casona", 2006, 144);
         addLibro("9788441421745","La Dama del Alba","Alex Casona", 2006, 144);
         addLibro("9788466716802","Flor de Leyendas","Alex Casona", 2004, 224);
         addLibro("9788441421523","La Barca Sin Pescador","Alex Casona", 2009, 104);
         addLibro("9788437605227","El Arbol de la Ciencia","Pio Baroja", 2004, 304);
         addLibro("9788401019180","Las Brumas del Miedo","Rafael Abalos", 2017, 480);
+        addLibro("9788401019180","Las Vrumas del Miedo","Rafael Abalos", 2017, 480);
         addLibro("9788401019180","Las Brumas del Miedo","Rafael Abalos", 2017, 480);
-        addLibro("9788401019180","Las Brumas del Miedo","Rafael Abalos", 2017, 480);
-        addLibro("9788401019180","Las Brumas del Miedo","Rafael Abalos", 2017, 480);
+        addLibro("9788401019180","Las Brumaz del Miedo","Rafael Abalos", 2017, 480);
         addLibro("9788401019180","Las Brumas del Miedo","Rafael Abalos", 2017, 480);
     }
 }
